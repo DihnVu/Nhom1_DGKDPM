@@ -16,27 +16,6 @@ Chúng em đã lựa chọn đề tài kiểm thử hệ thống OrangeHRM với
 
 Trong bài báo cáo này, chúng em sẽ trình bày cực kỳ chi tiết về phương pháp kiểm thử hộp trắng (phân tích đường cơ bản, giá trị biên) và kiểm thử hộp đen (sử dụng ma trận True/False cho 9 chức năng cốt lõi). Đặc biệt, báo cáo tích hợp việc thực thi kiểm thử hiệu năng/chịu tải bằng công cụ **Apache JMeter** nhằm đánh giá khách quan sức mạnh của hệ thống máy chủ và phát hiện các giới hạn chịu tải trước khi sập (Breaking Point). Cuối cùng, chúng em sẽ đưa ra báo cáo tổng hợp kết quả (Test Report), phân tích các rủi ro, danh sách lỗi (Defect log) và các cải tiến đề xuất cho đội ngũ phát triển.
 
-**Bảng phân chia công việc:**
-| Công việc | Sinh viên A | Sinh viên B |
-|---|---|---|
-| Tài liệu đặc tả (Use case, Sequence, Activity) | x | x |
-| Cài đặt môi trường XAMPP & OrangeHRM | x | |
-| Lên kế hoạch Test Plan & Quản lý Rủi ro | | x |
-| Thiết kế Ma trận Kiểm thử hộp đen | x | x |
-| Thực hiện kiểm thử hiệu năng (JMeter) | x | |
-| Tổng hợp Test Report & Đánh giá | x | x |
-
-## Kế hoạch thực hiện bài tập lớn:
-| Giai đoạn | Công việc | Chi tiết | Số ngày | Ngày bắt đầu | Ngày kết thúc |
-|---|---|---|---|---|---|
-| Giai đoạn 1 | Đặc tả yêu cầu | Phân tích bài toán, vẽ Use Case tổng quan và phân rã. Đặc tả chi tiết 9 chức năng. Vẽ Biểu đồ luồng, Tuần tự, Lớp. | 4 | 01/06/2024 | 04/06/2024 |
-| Giai đoạn 2 | Cài đặt hệ thống | Tải mã nguồn OrangeHRM. Cài đặt XAMPP, cấu hình Database MySQL. Khởi tạo dữ liệu mẫu (Mock data). | 2 | 05/06/2024 | 06/06/2024 |
-| Giai đoạn 3 | Lập Test Plan | Viết Kế hoạch kiểm thử theo chuẩn IEEE 829. Xác định chiến lược, tài nguyên, phân loại lỗi và tiêu chí chấp nhận. | 3 | 07/06/2024 | 09/06/2024 |
-| Giai đoạn 4 | Thiết kế Testcase | Xây dựng ma trận True/False cho Kiểm thử hộp đen. Áp dụng kỹ thuật BVA cho Kiểm thử hộp trắng. | 3 | 10/06/2024 | 12/06/2024 |
-| Giai đoạn 5 | Thực thi Kiểm thử| Tiến hành test thủ công (Manual Test) và sử dụng Apache JMeter để test chịu tải. Log bug. | 4 | 13/06/2024 | 16/06/2024 |
-| Giai đoạn 6 | Báo cáo & Nghiệm thu | Tổng hợp Bug Log. Đánh giá tỷ lệ Pass/Fail. Đưa ra giải pháp nâng cấp hệ thống. Hoàn thiện Document. | 2 | 17/06/2024 | 18/06/2024 |
-
----
 
 ## PHẦN I: TÀI LIỆU ĐẶC TẢ YÊU CẦU PHẦN MỀM (SRS)
 
