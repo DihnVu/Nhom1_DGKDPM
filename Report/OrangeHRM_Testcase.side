@@ -1,0 +1,156 @@
+{
+  "id": "a1b2c3d4-e5f6-4a1b-9c2d-3e4f5a6b7c8d",
+  "version": "2.0",
+  "name": "OrangeHRM_Selenium",
+  "url": "http://localhost",
+  "tests": [
+    {
+      "id": "t1a2b3c4-1234-5678-90ab-cdef12345678",
+      "name": "TC01_Login_Success",
+      "commands": [
+        {
+          "id": "c1a2b3c4-1234-5678-90ab-cdef12345678",
+          "comment": "Mở trang đăng nhập",
+          "command": "open",
+          "target": "/hrm-raw/web/index.php/auth/login",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c1a2b3c4-1234-5678-90ab-cdef12345679",
+          "comment": "Mở rộng cửa sổ tối đa",
+          "command": "setWindowSize",
+          "target": "1280x800",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c2a2b3c4-1234-5678-90ab-cdef12345678",
+          "comment": "Nhập Username",
+          "command": "type",
+          "target": "name=username",
+          "targets": [],
+          "value": "Admin"
+        },
+        {
+          "id": "c3a2b3c4-1234-5678-90ab-cdef12345678",
+          "comment": "Nhập Password",
+          "command": "type",
+          "target": "name=password",
+          "targets": [],
+          "value": "admin123"
+        },
+        {
+          "id": "c4a2b3c4-1234-5678-90ab-cdef12345678",
+          "comment": "Bấm nút Login",
+          "command": "click",
+          "target": "css=.oxd-button",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c5a2b3c4-1234-5678-90ab-cdef12345678",
+          "comment": "Kiểm tra xem chữ Dashboard có xuất hiện không",
+          "command": "assertText",
+          "target": "css=.oxd-topbar-header-breadcrumb-module",
+          "targets": [],
+          "value": "Dashboard"
+        }
+      ]
+    },
+    {
+      "id": "t2a2b3c4-1234-5678-90ab-cdef12345678",
+      "name": "TC02_Login_Failed_WrongPassword",
+      "commands": [
+        {
+          "id": "d1a2b3c4-1234-5678-90ab-cdef12345678",
+          "comment": "Mở trang đăng nhập",
+          "command": "open",
+          "target": "/hrm-raw/web/index.php/auth/login",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "d2a2b3c4-1234-5678-90ab-cdef12345678",
+          "comment": "Nhập Username",
+          "command": "type",
+          "target": "name=username",
+          "targets": [],
+          "value": "Admin"
+        },
+        {
+          "id": "d3a2b3c4-1234-5678-90ab-cdef12345678",
+          "comment": "Nhập sai Password",
+          "command": "type",
+          "target": "name=password",
+          "targets": [],
+          "value": "wrongpassword"
+        },
+        {
+          "id": "d4a2b3c4-1234-5678-90ab-cdef12345678",
+          "comment": "Bấm nút Login",
+          "command": "click",
+          "target": "css=.oxd-button",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "d5a2b3c4-1234-5678-90ab-cdef12345678",
+          "comment": "Kiểm tra thông báo lỗi xuất hiện",
+          "command": "assertText",
+          "target": "css=.oxd-alert-content-text",
+          "targets": [],
+          "value": "Invalid credentials"
+        }
+      ]
+    },
+    {
+      "id": "t3a2b3c4-1234-5678-90ab-cdef12345678",
+      "name": "TC03_Login_Failed_RequiredFields",
+      "commands": [
+        {
+          "id": "e1a2b3c4-1234-5678-90ab-cdef12345678",
+          "comment": "Mở trang đăng nhập",
+          "command": "open",
+          "target": "/hrm-raw/web/index.php/auth/login",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "e2a2b3c4-1234-5678-90ab-cdef12345678",
+          "comment": "Để trống các trường và bấm Login",
+          "command": "click",
+          "target": "css=.oxd-button",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "e3a2b3c4-1234-5678-90ab-cdef12345678",
+          "comment": "Kiểm tra thông báo Required xuất hiện",
+          "command": "assertText",
+          "target": "css=.oxd-input-group__message",
+          "targets": [],
+          "value": "Required"
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "s1a2b3c4-1234-5678-90ab-cdef12345678",
+      "name": "OrangeHRM Login Suite",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "t1a2b3c4-1234-5678-90ab-cdef12345678",
+        "t2a2b3c4-1234-5678-90ab-cdef12345678",
+        "t3a2b3c4-1234-5678-90ab-cdef12345678"
+      ]
+    }
+  ],
+  "urls": [
+    "http://localhost/"
+  ],
+  "plugins": []
+}
